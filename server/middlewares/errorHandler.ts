@@ -1,5 +1,5 @@
 import { ErrorRequestHandler, NextFunction, Request, Response } from 'express';
-import { ServerError } from '../types.js';
+import { ServerError } from '../types';
 
 /**
  * Global error handler middleware for catching and processing errors

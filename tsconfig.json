@@ -1,20 +1,14 @@
 {
   "compilerOptions": {
-    "outDir": "./dist/",
-    "sourceMap": true,
-    "strict": true,
-    "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "module": "esnext",
-    "moduleResolution": "bundler",
     "target": "ES2020",
-    "allowJs": true,
-    "jsx": "react",
-    "skipLibCheck": true
+    "module": "ESNext",
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "resolveJsonModule": true
   },
-  "ts-node": {
-    "esm": true
-  },
-  "include": ["client/**/*", "server/**/*", "types/*.ts"],
-  "exclude": ["node_modules", "dist", "**/*.test.ts"]
+  "files": [],
+  "references": [{ "path": "./client" }, { "path": "./server" }]
 }

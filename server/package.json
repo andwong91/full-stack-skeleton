@@ -1,20 +1,42 @@
 {
   "name": "server",
   "version": "1.0.0",
+  "main": "server.js",
   "type": "module",
   "scripts": {
-    "dev": "nodemon",
+    "start": "node --experimental-specifier-resolution=node dist/server.js",
+    "dev": "tsx watch server.ts",
     "build": "tsc",
-    "start": "node dist/index.js"
+    "clean": "rimraf dist",
+    "prebuild": "npm run clean",
+    "postinstall": "npm run build",
+    "debug-env": "tsx debug-env.js"
   },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
   "dependencies": {
+    "@langchain/openai": "^0.5.7",
+    "@langchain/pinecone": "^0.2.0",
+    "@pinecone-database/pinecone": "^5.1.1",
     "cors": "^2.8.5",
     "dotenv": "^16.5.0",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "openai": "^4.96.0",
+    "openmeteo": "^1.2.0",
+    "pg": "^8.15.5",
+    "server": "file:",
+    "zod": "^3.24.3"
   },
   "devDependencies": {
     "@types/cors": "^2.8.17",
-    "@types/express": "^5.0.0",
-    "nodemon": "^3.1.10"
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.14.1",
+    "@types/pg": "^8.11.14",
+    "nodemon": "^3.1.10",
+    "rimraf": "^5.0.10",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.3"
   }
 }
